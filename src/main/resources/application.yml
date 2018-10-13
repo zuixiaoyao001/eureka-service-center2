@@ -1,0 +1,20 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: server-center2
+eureka:
+  instance:
+    appname: center2
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8888/eureka/
+#  注册中心没必要将自己注册给自己
+    register-with-eureka: false
+#  注册中心不需要去检索服务，调用服务，故而不需要获取注册服务清单 
+    fetch-registry: false
+  server:
+#  设置读取超时时间
+    peer-node-read-timeout-ms: 12000
+#    关闭自我保护
+    enable-self-preservation: false
